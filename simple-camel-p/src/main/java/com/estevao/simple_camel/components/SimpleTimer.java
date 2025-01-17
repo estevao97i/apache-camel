@@ -10,9 +10,11 @@ public class SimpleTimer extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        from("timer:simpletimer?period=5000")
+        from("direct:simpletimer")
+                .routeId("test-simpletimer")
                 .setBody(simple("Mensagem enviada às ${date:now:HH:mm:ss}"))
-                .log(LoggingLevel.INFO, "${body}");
+                .log(LoggingLevel.INFO, "${body}")
+                .to("mock:result");
 
     }
 }
