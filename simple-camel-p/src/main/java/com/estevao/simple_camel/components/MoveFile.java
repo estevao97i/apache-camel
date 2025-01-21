@@ -21,7 +21,8 @@ public class MoveFile extends RouteBuilder {
         from("file:src/files/input?fileName=inputFile.txt")
                 .routeId("routeFileId")
                 .process(logExchange)
-                .to("file:src/files/output?fileName=outputFile.txt");
+                .to("file:src/files/output?fileName=outputFile.txt")
+        .end();
     }
 
 }

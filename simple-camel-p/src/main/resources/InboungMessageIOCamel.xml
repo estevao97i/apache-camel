@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+
+    <stream name="inputMessageStream" format="csv">
+        <record name="person" class="com.estevao.simple_camel.models.Person">
+            <field name="id"/>
+            <field name="name"/>
+            <field name="age"/>
+        </record>
+    </stream>
+
+</beanio>
